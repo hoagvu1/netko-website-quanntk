@@ -172,7 +172,7 @@ a {
       fill: #212121; }
 
 .main-slider .swiper-slide {
-  height: 680px;
+  height: 100vh;
   background-size: cover !important;
   text-align: center;
   color: #fff;
