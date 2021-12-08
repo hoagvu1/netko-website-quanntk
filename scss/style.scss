@@ -1139,12 +1139,24 @@ a {
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 16px;
+
+    @include tablet {
+      font-size: 32px;
+    }
+
+    @include mobile {
+      font-size: 28px;
+    }
   }
 
   p {
     max-width: 730px;
     font-size: 16px;
     margin: 0 auto;
+
+    @include tablet {
+      font-size: 14px;
+    }
   }
 }
 
@@ -1392,6 +1404,10 @@ a {
 
   &.value-2 {
     margin-bottom: 100px;
+
+    @include tablet {
+      margin-bottom: 80px;
+    }
   }
 }
 
@@ -1476,6 +1492,10 @@ a {
 .block_services {
   margin-bottom: 120px;
 
+  @include tablet {
+    margin-bottom: 80px;
+  }
+
   .desc {
     max-width: 940px;
     color: #757575;
@@ -1486,8 +1506,25 @@ a {
     display: flex;
     gap: 60px;
 
+    @include tablet {
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
     .col {
       width: calc((100% - 60px) / 2);
+
+      @include tablet {
+        width: 100%;
+        order: 2;
+        flex: auto;
+      }
+
+      &+.col {
+        @include tablet {
+          order: 1;
+        }
+      }
     }
 
     .img {
@@ -1511,7 +1548,7 @@ a {
 
   .desc {
     max-width: 940px;
-    color: #757575;
+    color: #E0E0E0;
     margin: 0 auto 60px;
   }
 
@@ -1519,8 +1556,17 @@ a {
     display: flex;
     gap: 40px;
 
+    @include tablet {
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
     .item {
       width: calc((100% - 120px) / 4);
+
+      @include tablet {
+        width: calc((100% - 20px) / 2);
+      }
 
       .numb {
         width: 88px;
@@ -1574,11 +1620,29 @@ a {
   margin: 100px 0;
   gap: 60px;
 
+  @include tablet {
+    margin: 80px 0;
+    flex-wrap: wrap;
+  }
+
   .col {
     width: calc((100% - 60px) / 2);
 
+    @include tablet {
+      width: 100%;
+      flex: auto;
+    }
+
     &.left {
       padding-left: calc((100vw - 1160px) / 2 + var(--bs-gutter-x,.75rem));
+
+      @include ipad_pro {
+        padding-left: var(--bs-gutter-x,.75rem);
+      }
+
+      @include tablet {
+        padding-right: var(--bs-gutter-x,.75rem);
+      }
 
       .title {
         font-size: 32px;
@@ -1606,6 +1670,10 @@ a {
 .block_faqs {
   margin-bottom: 120px;
 
+  @include tablet {
+    margin-bottom: 60px;
+  }
+
   .desc {
     max-width: 940px;
     color: #757575;
@@ -1616,11 +1684,29 @@ a {
     display: flex;
     gap: 60px;
 
+    @include tablet {
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
     .col {
       width: calc((100% - 60px) / 2);
 
+      @include tablet {
+        width: 100%;
+        flex: auto;
+      }
+
       &.right {
-        padding-right: calc((100vw - 1160px) / 2 + var(--bs-gutter-x,.75rem));
+        padding-right: calc((100vw - 1160px) / 2 + var(--bs-gutter-x,.75rem));;
+
+        @include ipad_pro {
+          padding-right: var(--bs-gutter-x,.75rem);
+        }
+
+        @include tablet {
+          padding-left: var(--bs-gutter-x,.75rem);
+        }
       }
     }
 
@@ -1634,6 +1720,14 @@ a {
   display: flex;
   margin-bottom: 100px;
 
+  @include tablet {
+    margin-bottom: 80px;
+  }
+
+  @include mobile {
+    flex-wrap: wrap;
+  }
+
   .item {
     display: flex;
     width: calc(100% / 3);
@@ -1642,6 +1736,18 @@ a {
     padding-left: 40px;
     align-items: center;
     color: #fff;
+
+    @include ipad_pro {
+      height: 480px;
+    }
+
+    @include tablet {
+      height: 420px;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
 
 
     &:before {
@@ -1674,8 +1780,12 @@ a {
 
       .name {
         font-size: 32px;
-        font-weight: 600;
+        font-weight: 700;
         margin-bottom: 36px;
+
+        @include tablet {
+          font-size: 24px;
+        }
       }
 
       .btn-outline-white {
@@ -1699,8 +1809,19 @@ a {
   gap: 80px;
   margin-bottom: 120px;
 
+  @include tablet {
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+    gap: 40px;
+  }
+
   .col {
     width: calc((100% - 80px) / 2);
+
+    @include tablet {
+      width: 100%;
+      flex: auto;
+    }
   }
 
   .title {
@@ -1745,6 +1866,17 @@ a {
       textarea {
         &.form-control {
           height: auto;
+        }
+      }
+    }
+
+    .form-check {
+      a {
+        font-weight: 700;
+        color: #009444;
+
+        &:hover {
+          text-decoration: underline;
         }
       }
     }
@@ -1804,9 +1936,17 @@ a {
   margin-bottom: 100px;
   color: #757575;
 
+  @include tablet {
+    margin-bottom: 60px;
+  }
+
   .block {
     &:not(:last-child) {
       margin-bottom: 100px;
+
+      @include tablet {
+        margin-bottom: 60px;
+      }
     }
 
     .block-title2 {
@@ -1831,7 +1971,7 @@ a {
         li {
           padding-left: 22px;
           position: relative;
-          
+
           &:not(:last-child) {
             margin-bottom: 6px;
           }
@@ -1871,5 +2011,18 @@ a {
         }
       }
     }
+  }
+}
+
+.block_img {
+  height: 360px;
+  background: url("../img/halong.jpg") no-repeat center center;
+  text-align: center;
+  background-size: cover;
+  background-attachment: fixed;
+  margin-bottom: 100px;
+
+  @include tablet {
+    margin-bottom: 60px;
   }
 }
